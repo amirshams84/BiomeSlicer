@@ -24,7 +24,7 @@ RUN chmod -R 0755 $CURRENT_PATH/exec/ ;
 RUN git clone https://github.com/amirshams84/test_data $CURRENT_PATH/test_data
 RUN chmod -R 0755 $CURRENT_PATH/test_data/ ;
 
-VOLUME $CURRENT_PATH/microbiome_slicer_results
+VOLUME $CURRENT_PATH/microbiome_slicer_results_folder
 
 RUN wget https://raw.githubusercontent.com/amirshams84/16S_Data_Parser/master/microbiome_slicer.py -P $CURRENT_PATH/
 

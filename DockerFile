@@ -1,4 +1,4 @@
-FROM amirshams/centos7:3.0
+FROM amirshams/centos7:4.0
 
 MAINTAINER Amir Shams <amir.shams84@gmail.com>
 ENV ROOT=/
@@ -24,7 +24,7 @@ RUN chmod -R 0755 $CURRENT_PATH/exec/ ;
 RUN git clone https://github.com/amirshams84/test_data $CURRENT_PATH/test_data
 RUN chmod -R 0755 $CURRENT_PATH/test_data/ ;
 
-VOLUME $CURRENT_PATH/16S_simple_analyser_results
+VOLUME $CURRENT_PATH/microbiome_slicer_results
 
 RUN wget https://raw.githubusercontent.com/amirshams84/16S_Data_Parser/master/microbiome_slicer.py -P $CURRENT_PATH/
 

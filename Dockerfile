@@ -21,6 +21,12 @@ RUN chmod -R 0755 $CURRENT_PATH/javascript/ ;
 RUN git clone https://github.com/amirshams84/exec $CURRENT_PATH/exec
 RUN chmod -R 0755 $CURRENT_PATH/exec/ ;
 
+##############################################################
+# Software:             TEST_DATA
+# Software Version:     1.0
+# Software Website:     -
+# Description:          required test files
+##############################################################
 RUN git clone https://github.com/amirshams84/test_data $CURRENT_PATH/test_data
 RUN chmod -R 0755 $CURRENT_PATH/test_data/ ;
 

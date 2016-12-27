@@ -14,7 +14,7 @@ pip install numpy
 pip install scipy
 pip install plotly
 pip install pandas
-pip install biom
+pip install biom-format
 ##############################################################
 # Software:             javascript
 # Software Version:     1.0

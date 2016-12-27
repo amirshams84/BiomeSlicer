@@ -3,6 +3,18 @@ FROM amirshams/centos7:4.0
 MAINTAINER Amir Shams <amir.shams84@gmail.com>
 ENV ROOT=/
 ENV CURRENT_PATH=.
+
+##############################################################
+# Software:             PIP INSTALL PACKAGES
+# Software Version:     1.0
+# Software Website:     -
+# Description:          required javascript library
+##############################################################
+pip install numpy
+pip install scipy
+pip install plotly
+pip install pandas
+pip install slugify
 ##############################################################
 # Software:             javascript
 # Software Version:     1.0

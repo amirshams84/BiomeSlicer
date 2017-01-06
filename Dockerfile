@@ -1,4 +1,4 @@
-FROM amirshams/centos7:4.0
+FROM amirshams/centos7:1.0
 
 MAINTAINER Amir Shams <amir.shams84@gmail.com>
 ENV ROOT=/

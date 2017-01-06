@@ -10,11 +10,11 @@ CMD ["/bin/bash"]
 # Software Website:     -
 # Description:          required javascript library
 ##############################################################
-pip install numpy
-pip install scipy
-pip install plotly
-pip install pandas
-pip install biom-format
+RUN pip install numpy
+RUN pip install scipy
+RUN pip install plotly
+RUN pip install pandas
+RUN pip install biom-format
 ##############################################################
 # Software:             javascript
 # Software Version:     1.0

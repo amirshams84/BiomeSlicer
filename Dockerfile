@@ -3,7 +3,7 @@ FROM amirshams/centos7:1.0
 MAINTAINER Amir Shams <amir.shams84@gmail.com>
 ENV ROOT=/
 ENV CURRENT_PATH=.
-
+CMD ["/bin/bash"]
 ##############################################################
 # Software:             PIP INSTALL PACKAGES
 # Software Version:     1.0

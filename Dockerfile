@@ -30,8 +30,8 @@ RUN chmod -R 0755 $CURRENT_PATH/javascript/ ;
 # Software Website:     -
 # Description:          required execution files
 ##############################################################
-RUN git clone https://github.com/amirshams84/exec $CURRENT_PATH/exec
-RUN chmod -R 0755 $CURRENT_PATH/exec/ ;
+RUN git clone https://github.com/amirshams84/exec $CURRENT_PATH/BIOME_SLICER_EXECDIR
+RUN chmod -R 0755 $CURRENT_PATH/BIOME_SLICER_EXECDIR/ ;
 
 ##############################################################
 # Software:             TEST_DATA
@@ -39,11 +39,11 @@ RUN chmod -R 0755 $CURRENT_PATH/exec/ ;
 # Software Website:     -
 # Description:          required test files
 ##############################################################
-RUN git clone https://github.com/amirshams84/test_data $CURRENT_PATH/test_data
-RUN chmod -R 0755 $CURRENT_PATH/test_data/ ;
+RUN git clone https://github.com/amirshams84/test_data $CURRENT_PATH/BIOME_SLICER_TESTDIR
+RUN chmod -R 0755 $CURRENT_PATH/BIOME_SLICER_TESTDIR/ ;
 
-VOLUME $CURRENT_PATH/microbiome_slicer_results_folder
+VOLUME $CURRENT_PATH/BIOME_SLICER_OUTPUTDIR
 
-RUN wget https://raw.githubusercontent.com/amirshams84/16S_Data_Parser/master/microbiome_slicer.py -P $CURRENT_PATH/
+RUN wget https://raw.githubusercontent.com/amirshams84/16S_Data_Parser/master/biome_slicer.py -P $CURRENT_PATH/
 
 CMD ["bin/bash"]

@@ -17,6 +17,13 @@ RUN pip install pandas
 RUN pip install biom-format
 RUN pip install xlrd
 ##############################################################
+# Software:             qiime
+# Software Version:     1.0
+# Software Website:     -
+# Description:          qiime library
+##############################################################
+RUN pip install qiime
+##############################################################
 # Software:             javascript
 # Software Version:     1.0
 # Software Website:     -

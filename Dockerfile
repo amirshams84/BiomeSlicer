@@ -20,6 +20,7 @@ RUN pip install openpyxl
 RUN pip install xlwt
 RUN pip install XlsxWriter
 RUN pip install lxml
+RUN pip install zip
 ##############################################################
 # Software:             qiime
 # Software Version:     1.0

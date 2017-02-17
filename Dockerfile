@@ -22,13 +22,6 @@ RUN pip install XlsxWriter
 RUN pip install lxml
 RUN pip install zip
 ##############################################################
-# Software:             qiime
-# Software Version:     1.0
-# Software Website:     -
-# Description:          qiime library
-##############################################################
-RUN pip install qiime
-##############################################################
 # Software:             javascript
 # Software Version:     1.0
 # Software Website:     -
@@ -57,6 +50,6 @@ RUN chmod -R 0755 $CURRENT_PATH/BIOM_SLICER_TESTDIR/ ;
 
 VOLUME $CURRENT_PATH/BIOM_SLICER_OUTPUTDIR
 
-RUN wget https://raw.githubusercontent.com/amirshams84/16S_Data_Parser/master/biom_slicer.py -P $CURRENT_PATH/
+RUN wget https://raw.githubusercontent.com/amirshams84/biom_slicer/master/biom_slicer.py -P $CURRENT_PATH/
 
 CMD ["bin/bash"]

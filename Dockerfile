@@ -23,6 +23,7 @@ RUN yum clean all ;
 # Software Website:     -
 # Description:          required javascript library
 ##############################################################
+
 ENTRYPOINT ["/bin/bash"]
 RUN pip install --upgrade pip
 RUN pip install numpy
@@ -30,13 +31,13 @@ RUN pip install scipy
 RUN pip install plotly
 RUN pip install pandas
 RUN pip install h5py
+RUN pip install biom-format
 RUN pip install xlrd
 RUN pip install openpyxl
 RUN pip install xlwt
 RUN pip install XlsxWriter
 RUN pip install lxml
 RUN pip install zip
-RUN pip install biom-format
 ##############################################################
 # Software:             Regular
 # Software Version:     1.0

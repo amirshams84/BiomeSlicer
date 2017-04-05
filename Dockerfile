@@ -58,7 +58,13 @@ RUN wget https://github.com/mothur/mothur/releases/download/v1.39.5/Mothur.linux
 RUN unzip /EXECDIR/Mothur.linux_64.zip -d /EXECDIR
 RUN rm -rf /EXECDIR/Mothur.linux_64.zip /EXECDIR/__MACOSX
 RUN chmod -R 0755 /EXECDIR/mothur
-
+##############################################################
+# Dockerfile Version:   1.0
+# Software:             biom_slicer
+# Software Version:     1.0
+# Software Website:     .
+# Description:          biome_slicer 
+##############################################################
 RUN wget https://raw.githubusercontent.com/amirshams84/biom_slicer/master/biom_slicer.py -P $CURRENT_PATH/
 
 ENTRYPOINT ["/bin/bash"]

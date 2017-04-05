@@ -47,25 +47,18 @@ ENTRYPOINT ["/bin/bash"]
 RUN mkdir /INPUTDIR /EXECDIR /OUTPUTDIR /TESTDIR /INDEXDIR
 RUN chmod -R 0755 /INPUTDIR /EXECDIR /OUTPUTDIR /TESTDIR /INDEXDIR
 ##############################################################
-# Software:             exec
-# Software Version:     1.0
-# Software Website:     -
-# Description:          required execution files
+# Dockerfile Version:   1.0
+# Software:             mothur
+# Software Version:     1.39
+# Software Website:     www.mothur.org
+# Description:          mothur 
 ##############################################################
-RUN git clone https://github.com/amirshams84/exec $CURRENT_PATH/BIOM_SLICER_EXECDIR
-RUN chmod -R 0755 $CURRENT_PATH/BIOM_SLICER_EXECDIR/ ;
-
-##############################################################
-# Software:             TEST_DATA
-# Software Version:     1.0
-# Software Website:     -
-# Description:          required test files
-##############################################################
-RUN git clone https://github.com/amirshams84/test_data $CURRENT_PATH/BIOM_SLICER_TESTDIR
-RUN chmod -R 0755 $CURRENT_PATH/BIOM_SLICER_TESTDIR/ ;
-
-VOLUME $CURRENT_PATH/BIOM_SLICER_OUTPUTDIR
+ 
+RUN wget https://github.com/mothur/mothur/releases/download/v1.39.5/Mothur.linux_64.zip -P /EXECDIR
+RUN unzip /EXECDIR/Mothur.linux_64.zip -d /EXECDIR
+RUN rm -rf /EXECDIR/Mothur.linux_64.zip /EXECDIR/__MACOSX
+RUN chmod -R 0755 /EXECDIR/mothur
 
 RUN wget https://raw.githubusercontent.com/amirshams84/biom_slicer/master/biom_slicer.py -P $CURRENT_PATH/
 
-CMD ["bin/bash"]
+ENTRYPOINT ["/bin/bash"]

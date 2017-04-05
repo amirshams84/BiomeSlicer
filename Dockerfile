@@ -1,15 +1,30 @@
-FROM amirshams/centos7:1.0
-
+FROM centos:latest
 MAINTAINER Amir Shams <amir.shams84@gmail.com>
 ENV ROOT=/
-ENV CURRENT_PATH=.
-CMD ["/bin/bash"]
+ENV CURRENT_PATH=/
+##############################################################
+# Dockerfile Version:   1.0
+# Software:             centos7
+# Software Version:     7.0
+# Software Website:     https://www.centos.org/
+# Description:          Centos7
+##############################################################
+
+RUN yum -y update ;
+RUN yum clean all ;
+RUN yum install -y epel-release ;
+RUN yum install -y ansible git gcc gcc-c++ make net-tools sudo which wget file patch libtool texinfo tar unzip bzip2 bzip2-devel ; 
+RUN yum install -y openssl openssl-devel readline readline-devel sqlite-devel tk-devel zlib zlib-devel ncurses-devel python-pip mc ;
+RUN yum install -y tbb psmisc python-devel ;
+RUN yum clean all ;
 ##############################################################
 # Software:             PIP INSTALL PACKAGES
 # Software Version:     1.0
 # Software Website:     -
 # Description:          required javascript library
 ##############################################################
+ENTRYPOINT ["/bin/bash"]
+RUN pip install --upgrade pip
 RUN pip install numpy
 RUN pip install scipy
 RUN pip install plotly
@@ -22,14 +37,15 @@ RUN pip install XlsxWriter
 RUN pip install lxml
 RUN pip install zip
 ##############################################################
-# Software:             javascript
+# Software:             Regular
 # Software Version:     1.0
 # Software Website:     -
 # Description:          required javascript library
 ##############################################################
-RUN git clone https://github.com/amirshams84/javascript $CURRENT_PATH/javascript
-RUN chmod -R 0755 $CURRENT_PATH/javascript/ ;
 
+ENTRYPOINT ["/bin/bash"]
+RUN mkdir /INPUTDIR /EXECDIR /OUTPUTDIR /TESTDIR /INDEXDIR
+RUN chmod -R 0755 /INPUTDIR /EXECDIR /OUTPUTDIR /TESTDIR /INDEXDIR
 ##############################################################
 # Software:             exec
 # Software Version:     1.0

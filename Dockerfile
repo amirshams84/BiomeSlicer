@@ -1,4 +1,3 @@
-
 FROM centos:latest
 MAINTAINER Amir Shams <amir.shams84@gmail.com>
 ##############################################################

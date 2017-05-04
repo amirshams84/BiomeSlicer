@@ -1,7 +1,6 @@
+
 FROM centos:latest
 MAINTAINER Amir Shams <amir.shams84@gmail.com>
-ENV ROOT=/
-ENV CURRENT_PATH=/
 ##############################################################
 # Dockerfile Version:   1.0
 # Software:             centos7
@@ -15,7 +14,7 @@ RUN yum clean all ;
 RUN yum install -y epel-release ;
 RUN yum install -y ansible git gcc gcc-c++ make net-tools sudo which wget file patch libtool texinfo tar unzip bzip2 bzip2-devel ; 
 RUN yum install -y openssl openssl-devel readline readline-devel sqlite-devel tk-devel zlib zlib-devel ncurses-devel python-pip mc ;
-RUN yum install -y tbb psmisc python-devel tkinter ;
+RUN yum install -y tbb psmisc python-devel ;
 RUN yum clean all ;
 ##############################################################
 # Software:             PIP INSTALL PACKAGES
@@ -24,29 +23,25 @@ RUN yum clean all ;
 # Description:          required javascript library
 ##############################################################
 
-ENTRYPOINT ["/bin/bash"]
 RUN pip install --upgrade pip
 RUN pip install numpy
 RUN pip install scipy
 RUN pip install plotly
 RUN pip install pandas
-RUN pip install h5py
-RUN pip install biom-format
 RUN pip install xlrd
 RUN pip install openpyxl
 RUN pip install xlwt
 RUN pip install XlsxWriter
 RUN pip install lxml
 RUN pip install zip
-RUN pip install qiime
+RUN pip install biom-format
 ##############################################################
-# Software:             Regular
+# Software:             Regular Directories
 # Software Version:     1.0
 # Software Website:     -
 # Description:          required javascript library
 ##############################################################
 
-ENTRYPOINT ["/bin/bash"]
 RUN mkdir /INPUTDIR /EXECDIR /OUTPUTDIR /TESTDIR /INDEXDIR
 RUN chmod -R 0755 /INPUTDIR /EXECDIR /OUTPUTDIR /TESTDIR /INDEXDIR
 ##############################################################
@@ -68,6 +63,3 @@ RUN chmod -R 0755 /EXECDIR/mothur
 # Software Website:     .
 # Description:          biome_slicer 
 ##############################################################
-RUN wget https://raw.githubusercontent.com/amirshams84/biom_slicer/master/biom_slicer.py -P $CURRENT_PATH/
-
-ENTRYPOINT ["/bin/bash"]

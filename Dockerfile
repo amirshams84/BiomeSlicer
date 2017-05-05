@@ -62,3 +62,6 @@ RUN chmod -R 0755 /EXECDIR/mothur
 # Software Website:     .
 # Description:          biome_slicer 
 ##############################################################
+RUN wget https://github.com/amirshams84/biomslicer/blob/master/biomeslicer.pyc?raw=true -O /biomeslicer.pyc
+RUN chmod -R 0755 /simply_blast.pyc
+

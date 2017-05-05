@@ -62,6 +62,8 @@ RUN chmod -R 0755 /EXECDIR/mothur
 # Software Website:     .
 # Description:          biomeeslicer python script
 ##############################################################
+
+
 RUN wget https://github.com/amirshams84/biomeslicer/blob/master/biomeslicer.pyc?raw=true -O /biomeslicer.pyc
 RUN chmod -R 0755 /biomeslicer.pyc
 

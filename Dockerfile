@@ -57,13 +57,13 @@ RUN rm -rf /EXECDIR/Mothur.linux_64.zip /EXECDIR/__MACOSX
 RUN chmod -R 0755 /EXECDIR/mothur
 ##############################################################
 # Dockerfile Version:   1.0
-# Software:             biomeslicer
+# Software:             BiomeSlicer
 # Software Version:     1.0
 # Software Website:     .
-# Description:          biomeeslicer python script
+# Description:          BiomeSlicer python script
 ##############################################################
 
 
-RUN wget https://github.com/amirshams84/biomeslicer/blob/master/biomeslicer.pyc?raw=true -O /biomeslicer.pyc
-RUN chmod -R 0755 /biomeslicer.pyc
+RUN wget https://github.com/amirshams84/BiomeSlicer/blob/master/BiomeSlicer.pyc?raw=true -O /BiomeSlicer.pyc
+RUN chmod -R 0755 /BiomeSlicer.pyc
 
